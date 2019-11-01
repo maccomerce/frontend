@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 import Home from './components/home/Home';
 import NotFound from './components/common/notfound/NotFound';
+import ProductsList from './components/products/ProductsList';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <CssBaseline />
       <Router style={{marginTop: 64}}>
         <Home path="/" />
+        <ProductsList path="/products" />
         <NotFound path="/404" />
         <Redirect from="*" noThrow to="/404" />
       </Router>

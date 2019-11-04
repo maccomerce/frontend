@@ -1,2 +1,2 @@
-# frontend
-Este repositório contém o código fonte da aplicação frontend web do nosso trabalho.
+# backoffice
+Este repositório contém o código fonte da aplicação backoffice do nosso trabalho.

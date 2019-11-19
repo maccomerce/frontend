@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function MyToolbar() {
+export default function MyToolbar(props) {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,7 @@ export default function MyToolbar() {
       <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Maccommerce
+            {props.title ? props.title : 'Maccommerce'}
           </Typography>
         </Toolbar>
       </AppBar>

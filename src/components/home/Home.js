@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from "@reach/router";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -19,10 +20,11 @@ const menuCardStyles = makeStyles(theme => ({
 
 function MenuCard(props) {
   const classes = menuCardStyles();
+  const goToPage = () => navigate(props.path)
 
   return (
     <Grid item>
-      <Button variant="contained" size="large" className={classes.button}>
+      <Button variant="contained" size="large" className={classes.button} onClick={goToPage}>
         <Typography variant="h6" className={classes.title}>
           {props.title}
         </Typography>
@@ -47,12 +49,12 @@ export default function Home() {
       <Grid container justify="center" className={classes.root} spacing={2}>
         <Grid item xs={6}>
           <Grid container justify="center" spacing={6}>
-            <MenuCard title="Produtos" />
-            <MenuCard title="Estoque" />
-            <MenuCard title="Ofertas" />
-            <MenuCard title="Vendas" />
-            <MenuCard title="Clientes" />
-            <MenuCard title="Usuários" />
+            <MenuCard title="Produtos" path="/products" />
+            <MenuCard title="Estoque" path="/inventories" />
+            <MenuCard title="Ofertas" path="/offers" />
+            <MenuCard title="Vendas" path="/sells" />
+            <MenuCard title="Clientes" path="/customers" />
+            <MenuCard title="Usuários" path="/users" />
           </Grid>
         </Grid>
       </Grid>
